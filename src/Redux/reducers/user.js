@@ -13,7 +13,7 @@ const initialState = {
             password: '2'
         }
     ],
-    currentUserPassword: '2'
+    currentUserId: '2'
 }
 
 const user = produce((state, action) => {
@@ -24,6 +24,8 @@ const user = produce((state, action) => {
         case 'DELETE_USER':
             state.users.splice(action.payload, 1)
             break;
+        case 'CHANGE_CURRENT_USER':
+            state.currentUserId = action.payload
     }
 }
     , initialState)

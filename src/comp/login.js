@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { changeCurrentUser } from '../Redux/actions'
 export default function Login() {
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const data = useSelector(state => state)
     let user = {}
@@ -10,11 +12,15 @@ export default function Login() {
         user = data?.user?.users?.find(user => user.name === name)
         console.log(user)
         if (user) {
-            if(user.password==password){
+            if (user.password == password) {
                 console.log('success')
-                navigate('/allproduct')
+                dispatch(changeCurrentUser(user.userId))
+                console.log('change current user')
+                
+                navigate('/personal-area')
+                debugger
             }
-            else{
+            else {
                 console.log('password not valid!')
             }
         }

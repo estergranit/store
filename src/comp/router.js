@@ -5,6 +5,7 @@ import Login from './login'
 import SignUp from './signUp'
 import AllProduct from './allProduct'
 import ProductDetail from './productDetail'
+import PersonalArea from './personalArea'
 
 export default function Router() {
     return (
@@ -15,6 +16,7 @@ export default function Router() {
             <Route path='/signup' element={<SignUp/>}></Route>
             <Route path='/allproduct' element={<AllProduct/>}></Route>
             <Route path='/product_detail/:name' element={<ProductDetail/>}></Route>
+            <Route path='/personal-area' element={<PersonalArea/>}></Route>
         </Routes>
         </BrowserRouter>
     )
