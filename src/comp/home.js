@@ -16,7 +16,6 @@ export default function Home() {
 
             {data?.product?.category?.map((item, key) => (
                 <div key={key} style={{ display: 'inline-block', margin: '2cm' }}>
-                    {console.log(item)}
                     <img 
                         src={require(`../assets/${data?.product?.products?.find(item2 => item2.categoryId == item.categoryId).name}1.jpg`)} width={200}></img>
                     <br />
