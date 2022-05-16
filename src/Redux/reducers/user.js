@@ -13,7 +13,7 @@ const initialState = {
             password: '2'
         }
     ],
-    currentUserId: '2'
+    currentUserId: '0'
 }
 
 const user = produce((state, action) => {

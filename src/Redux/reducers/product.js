@@ -3,26 +3,39 @@ import produce from 'immer'
 const initialState = {
   products: [
     {
-      name: 'banana',
-      price: '2.8',
-      color: 'yellow'
+      name: 'sneakers',
+      price: '100',
+      color: 'red',
+      categoryId: '1',
+      img:'sneakers'
     }
     , {
-      name: 'orange',
-      price: '10.9',
-      color: 'orange'
+      name: 'boots',
+      price: '200',
+      color: 'brown',
+      categoryId: '1'
     },
     {
-      name: 'charry',
-      price: '2.8',
-      color: '19.8'
+      name: 'shirt',
+      price: '50',
+      color: 'green', 
+      categoryId: '2'
+    }
+  ],
+  category: [
+    {
+      categoryId: '1',
+      name: 'shoes',
+    },
+    {
+      categoryId: '2',
+      name: 'clothes',
     }
   ],
   adminId: 'mimi'//?
 }
 
 const reducer = {
-
   ADD_PRODUCT(state, action) {
     state.products.push(action.payload)
   },
