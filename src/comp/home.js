@@ -11,13 +11,18 @@ export default function Home() {
             <nav>
                 <Link to='/login'>log in</Link>{'    '}
                 <Link to='/signup'>sign up</Link>{'    '}
-                <Link to='/allproduct'>allproduct</Link>{'    '}
+                {/* <Link to='/all-product' >allproduct</Link>{'    '} */}
             </nav>
 
             {data?.product?.category?.map((item, key) => (
                 <div key={key} style={{ display: 'inline-block', margin: '2cm' }}>
-                    <img 
-                        src={require(`../assets/${data?.product?.products?.find(item2 => item2.categoryId == item.categoryId).name}1.jpg`)} width={200}></img>
+                    {/* <Link to='/all-product' params={{categoryId:item.categoryId}}> */}
+                    <Link to={{pathname: `/all-product/${item.categoryId}`}}>
+                        <img
+                            src={require(`../assets/${data?.product?.products?.find(
+                                item2 => item2.categoryId == item.categoryId).name}1.jpg`)}
+                            width={200}></img>
+                    </Link>
                     <br />
                     {item.name}
                 </div>
