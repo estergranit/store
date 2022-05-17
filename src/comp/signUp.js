@@ -26,6 +26,7 @@ export default function SignUp() {
                             }
                         });
                         user.userId = maxUserId + 1
+                        user.cart = []
                         dispatch(addUser(user))
                 }}>הוסף משתמש</button>
             </section>

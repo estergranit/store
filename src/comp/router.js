@@ -15,7 +15,7 @@ export default function Router() {
             <Route path='/login' element={<Login/>}></Route>
             <Route path='/signup' element={<SignUp/>}></Route>
             <Route path='/all-product/:categoryId' element={<AllProduct/>}></Route>
-            <Route path='/product_detail/:name' element={<ProductDetail/>}></Route>
+            <Route path='/product_detail/:productName' element={<ProductDetail/>}></Route>
             <Route path='/personal-area' element={<PersonalArea/>}></Route>
         </Routes>
         </BrowserRouter>

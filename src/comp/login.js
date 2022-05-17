@@ -14,11 +14,10 @@ export default function Login() {
         if (user) {
             if (user.password == password) {
                 console.log('success')
+                //debugger
                 dispatch(changeCurrentUser(user.userId))
-                console.log('change current user')
-                
+                console.log('change current user')                
                 navigate('/personal-area')
-                debugger
             }
             else {
                 console.log('password not valid!')

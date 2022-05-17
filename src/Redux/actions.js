@@ -9,3 +9,6 @@ export function deleteUser(name){
 export function changeCurrentUser(userId){
     return {type:'CHANGE_CURRENT_USER',payload:userId}
 }
+export function addToCart(cart){
+    return {type:'ADD_TO_CART',payload:cart}
+}

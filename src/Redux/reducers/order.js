@@ -7,12 +7,12 @@ const initialState = {
       userId: 101,
       products: [
         {
-          productId: 1,
-          amount: 5
+          productName: 'sneakers',
+          quantity: 5
         },
         {
-          productId: 2,
-          amount: 10
+          productName: 'boots',
+          quantity: 10
         }
       ]
 
@@ -23,12 +23,12 @@ const initialState = {
       userId: 102,
       products: [
         {
-          productId: 1,
-          amount: 5
+          productName: 'boots',
+          quantity: 5
         },
         {
-          productId: 2,
-          amount: 10
+          productName: 'shirt',
+          quantity: 10
         }
       ]
 
