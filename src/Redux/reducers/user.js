@@ -63,6 +63,11 @@ const user = produce((state, action) => {
             // let cart = user.cart.push(action.payload)
             // user.cart = cart
             break
+            case 'EMPTY_CART':
+                console.log('empty cart now')
+                state.users
+                .filter(user => user.userId === state.currentUserId)[0].cart=new Array(0)      
+            break
     }
 }
     , initialState)

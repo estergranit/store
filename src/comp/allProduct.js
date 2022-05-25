@@ -20,7 +20,7 @@ export default function AllProduct() {
                 ?.filter(item=>item.categoryId==categoryId)
                 ?.map((item, key) => (
                     <div key={key}>{item.name}
-                        <button onClick={() => navigate(`/product_detail/${item.name}`)}>לפרטים מלאים</button>
+                        <button onClick={() => navigate(`/product-detail/${item.name}`)}>לפרטים מלאים</button>
                         <button onClick={() => dispatch({type:'DELETE_PRODUCT' ,payload:key})}>מחק מוצר</button>
                         {/* השליחה לצורה השניה */}
                         </div>

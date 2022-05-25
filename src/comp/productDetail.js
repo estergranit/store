@@ -23,16 +23,21 @@ export default function ProductDetail() {
             <nav>
                 <Link to='/login'>log in</Link>{'    '}
                 <Link to='/signup'>sign up</Link>{'    '}
-                <Link to='/allproduct' >all products</Link>
+                <Link to='/' >home</Link>
             </nav>
             <section>
                 <h1>{productName}</h1>
                 <Slider>
                     {/* איך לעשות בלולאה */}
-                    <img src={`${path}${productName}1.jpg`} ></img>
-                    <img src={`${path}${productName}2.jpg`}></img>
-                    <img src={`${path}${productName}3.jpg`}></img>
-                    <img src={`${path}${productName}4.jpg`}></img>
+                    <img src={require(`../assets/${productName}1.jpg`)} width={400}></img>
+                    <img src={require(`../assets/${productName}2.jpg`)} width={400}></img>
+                    <img src={require(`../assets/${productName}3.jpg`)} width={400}></img>
+                    <img src={require(`../assets/${productName}4.jpg`)} width={400}></img>
+                    {/* <img
+                        src={require(`../assets/${productName}1.jpg`)}
+                        width={200}></img> */}
+                    {/* <img src={require(`${path}${productName}1.jpg`)} ></img> */}
+
                 </Slider>
                 <p>{`color: ${product.color}`}</p>
                 <p>{`price: ${product.price}`}</p>

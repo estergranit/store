@@ -18,16 +18,9 @@ export default function SignUp() {
                 <label>enter name<input type='text' onChange={(e) => { user.name = e.target.value }}></input></label>
                 <label>enter password<input type='password' onChange={(e) => { user.password = e.target.value }}></input></label>
                 <button onClick={() => {
-                        let maxUserId = 0
-                        data?.user?.users?.forEach(element => {
-                            if(element.userId>maxUserId){
-                                maxUserId = element.userId 
-                                //alert(maxUserId)
-                            }
-                        });
-                        user.userId = maxUserId + 1
-                        user.cart = []
-                        dispatch(addUser(user))
+                    user.userId = Math.max(...data?.user?.users.map(user => user.userId)) + 1
+                    user.cart = []
+                    dispatch(addUser(user))
                 }}>הוסף משתמש</button>
             </section>
 

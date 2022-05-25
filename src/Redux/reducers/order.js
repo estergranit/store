@@ -41,7 +41,7 @@ const initialState = {
 const reducer = {
 
   ADD_ORDER(state, action) {
-    state.products.push(action.payload)
+    state.orders.push(action.payload)
   },
   DELETE_ORDER(state, action) {
     state.products.splice(action.payload, 1)
