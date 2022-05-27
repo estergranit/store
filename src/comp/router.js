@@ -8,11 +8,13 @@ import ProductDetail from './productDetail'
 import PersonalArea from './personalArea'
 import Cart from './cart'
 import Buy from './buy'
+import ResponsiveAppBar from './navigate';
 
 
 export default function Router() {
     return (
         <BrowserRouter>
+          <ResponsiveAppBar></ResponsiveAppBar>
         <Routes>
             <Route path='/' element={<Home/>}></Route>
             <Route path='/login' element={<Login/>}></Route>

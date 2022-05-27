@@ -1,10 +1,10 @@
 // import React from 'react'
 
 // export default function Navigate() {
-   
+
 //     return (
 //         <>
-          
+
 
 //         </>
 //     )
@@ -23,11 +23,18 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { useSelector, useDispatch } from 'react-redux'
+// import Login from './login';
+// import SignUp from './signUp';
+import { Link } from 'react-router-dom';
+
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
+  const data = useSelector(state => state)
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -70,7 +77,8 @@ const ResponsiveAppBar = () => {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
+
+            {<IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -79,7 +87,7 @@ const ResponsiveAppBar = () => {
               color="inherit"
             >
               <MenuIcon />
-            </IconButton>
+            </IconButton>}
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -136,7 +144,7 @@ const ResponsiveAppBar = () => {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          {data.user.currentUserId > 100 ? <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -165,6 +173,12 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
+            :
+            <div>
+              <Link to='/login'>log in</Link>{'    '}
+              <Link to='/signup'>sign up</Link>{'    '}
+            </div>
+          }
         </Toolbar>
       </Container>
     </AppBar>

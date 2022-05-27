@@ -8,11 +8,7 @@ export default function Home() {
     return (
         <>
             <h1>Home</h1>
-            <nav>
-                <Link to='/login'>log in</Link>{'    '}
-                <Link to='/signup'>sign up</Link>{'    '}
-                {/* <Link to='/all-product' >allproduct</Link>{'    '} */}
-            </nav>
+            
 
             {data?.product?.category?.map((item, key) => (
                 <div key={key} style={{ display: 'inline-block', margin: '2cm' }}>
