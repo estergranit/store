@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart } from '../Redux/actions'
 
-import Slider from './Slider'
+import Slider from './slider'
 export default function ProductDetail() {
     const dispatch = useDispatch()
     const data = useSelector(state => state)
