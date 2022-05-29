@@ -52,6 +52,37 @@ const ResponsiveAppBar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  /////for the profile icon------------------------------------------------------------------
+  function stringToColor(string) {
+    let hash = 0;
+    let i;
+  
+    /* eslint-disable no-bitwise */
+    for (i = 0; i < string.length; i += 1) {
+      hash = string.charCodeAt(i) + ((hash << 5) - hash);
+    }
+  
+    let color = '#';
+  
+    for (i = 0; i < 3; i += 1) {
+      const value = (hash >> (i * 8)) & 0xff;
+      color += `00${value.toString(16)}`.slice(-2);
+    }
+    /* eslint-enable no-bitwise */
+  
+    return color;
+  }
+  
+  function stringAvatar(name) {
+    return {
+      sx: {
+        bgcolor: stringToColor(name),
+      },
+      children:name[0]
+      // children: `${name.split(' ')[0][0]}${name.split(' ')[1][0]}` || name[0],
+    };
+  }
+  /////----------------------------------------------------------------------------------------
 
   return (
     <AppBar position="static">
@@ -147,7 +178,11 @@ const ResponsiveAppBar = () => {
           {data.user.currentUserId > 100 ? <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+              {console.log(`current ${data.user.currentUserId}`)}
+              {/* {console.log(`find `)} */}
+              {console.log(data.user.users.find(user=>user.userId==data.user.currentUserId).name)}
+              <Avatar {...stringAvatar(data.user.users.find(user=>user.userId==data.user.currentUserId).name)} />
               </IconButton>
             </Tooltip>
             <Menu
